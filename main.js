@@ -8,7 +8,7 @@ console.log (add (3, 4))
 function multiply(a,b) {
     let product = 0;
     for (counter = 0; counter < b; counter++){
-        product += add(a,0);
+        product = add(a,product);
         
     }
     return product;
@@ -19,7 +19,7 @@ function multiply(a,b) {
 function power(x,n) {
     let power = 1;
     for (counterB = 0; counterB < n; counterB++) {
-        power *= multiply(x,1); 
+        power = multiply(x,power); 
     }
     return power;
 }
@@ -29,7 +29,7 @@ function power(x,n) {
 function factorial (n){
     let factorial = n;
     for (counterC = n-1; counterC > 0; counterC --) {
-        factorial *= multiply(counterC,1)
+        factorial = multiply(counterC,factorial)
     }
     return factorial;
 }
